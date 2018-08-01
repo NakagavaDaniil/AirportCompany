@@ -2,7 +2,7 @@ package model;
 
 public class Plane extends AirVehicle {
 
-   private Type type = Type.DEFAULT;
+   private String type = "Unknown";
    private String name = "Unknown";
    private int fuelTankMax = 0;
    private int fuelTank = 0;
@@ -19,7 +19,7 @@ public class Plane extends AirVehicle {
 // constructors-----------------------------------------------------------------------------------------------
 
 
-    public Plane(Type type, String name, int fuelTankMax, int fuelTank, double weight, double fuelConsumption, int MAX_SPEED, int flyRange, int carriage, int maxCapacity, boolean START, boolean flies) {
+    public Plane(String type, String name, int fuelTankMax, int fuelTank, double weight, double fuelConsumption, int MAX_SPEED, int flyRange, int carriage, int maxCapacity, boolean START, boolean flies) {
         this.type = type;
         this.name = name;
         this.fuelTankMax = fuelTankMax;
@@ -36,11 +36,7 @@ public class Plane extends AirVehicle {
 
     public Plane() {
     }
-    // enum------------------------------------------------------------------------------------------------------
 
-    public enum Type {
-        AIRBUS, BOEING, DUGLAS, AN, TU, DEFAULT;
-    }
 
     // getters & setters------------------------------------------------------------------------------------------
 
@@ -53,12 +49,12 @@ public class Plane extends AirVehicle {
         this.flyRange = flyRange;
     }
 
-    public Type getType() {
-        return type;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public String getType() {
+        return type;
     }
 
     public String getName() {
